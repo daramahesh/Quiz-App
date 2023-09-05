@@ -1,0 +1,21 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: QUIZ-SERVICE
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 5MB
+      max-request-size: 5MB
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: mahesh
+    url: jdbc:mysql://localhost:3306/quiz_service
+    username: mahesh
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

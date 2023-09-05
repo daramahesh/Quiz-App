@@ -1,0 +1,18 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: QUESTION-SERVICE
+          uri: lb://QUESTION-SERVICE
+          predicates:
+            - Path=/api/v1/question/**
+
+        - id: QUIZ-SERVICE
+          uri: lb://QUIZ-SERVICE
+          predicates:
+            - Path=/api/v1/quiz/**
+
